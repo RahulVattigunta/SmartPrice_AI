@@ -13,12 +13,13 @@ This project is a **machine learning-powered web app** built using **Streamlit**
 ---
 
 ## 📂 Project Structure
+```
 smartprice_ai/
 │── smartprice_ai.py # Main Streamlit app
 │── mobile_price_classification.csv # Optional local dataset
 │── requirements.txt # Python dependencies
 │── README.md # Project overview
-
+```
 
 ---
 
