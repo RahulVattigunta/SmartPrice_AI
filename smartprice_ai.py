@@ -1,6 +1,3 @@
-# SmartPrice AI: Mobile Cost Predictor and Classifier
-
-# Step 1: Import Libraries
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -11,7 +8,7 @@ from sklearn.ensemble import RandomForestRegressor, RandomForestClassifier
 from sklearn.metrics import mean_absolute_error, mean_squared_error, accuracy_score, classification_report, confusion_matrix
 import streamlit as st
 
-# Step 2: Load Dataset (local fallback)
+# Load Dataset (local fallback)
 @st.cache_data
 def load_data():
     try:
@@ -41,14 +38,14 @@ X_scaled = scaler.transform(X)
 X_train_r, X_test_r, y_train_r, y_test_r = train_test_split(X_scaled, y_reg, test_size=0.2, random_state=42)
 X_train_c, X_test_c, y_train_c, y_test_c = train_test_split(X_scaled, y_cls, test_size=0.2, random_state=42)
 
-# Step 4: Train Models
+# Train Models
 regressor = RandomForestRegressor(n_estimators=100, random_state=42)
 regressor.fit(X_train_r, y_train_r)
 
 classifier = RandomForestClassifier(n_estimators=100, random_state=42)
 classifier.fit(X_train_c, y_train_c)
 
-# Step 5: Streamlit UI
+# Streamlit UI
 st.title("📱 SmartPrice AI - Mobile Price Predictor & Classifier")
 st.markdown("Enter mobile specifications to get predicted price and category.")
 
